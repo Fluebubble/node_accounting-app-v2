@@ -154,7 +154,7 @@ const updateExpense = (id, updates) => {
 
 const createExpense = (newExpenseData) => {
   const newExpense = {
-    id: Date.now() + Math.floor(Math.random() * 1000),
+    id: +(Date.now() + Math.floor(Math.random() * 1000)),
     ...newExpenseData,
     note: newExpenseData.note === undefined ? '' : newExpenseData.note,
   };

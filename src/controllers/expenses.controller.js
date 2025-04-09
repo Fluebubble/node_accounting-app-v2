@@ -150,7 +150,7 @@ const createExpense = (req, res) => {
   // }
 
   if (!userService.getUser(userId)) {
-    res.status(400).send("User by this ID didn't found");
+    res.sendStatus(400);
 
     return;
   }

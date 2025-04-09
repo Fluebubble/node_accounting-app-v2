@@ -38,7 +38,7 @@ const add = (req, res) => {
   const { name } = req.body;
 
   if (!isNameCorrect(name)) {
-    res.status(400).send({ error: 'Name is empty or has incorrect type' });
+    res.sendStatus(400);
 
     return;
   }
