@@ -1,17 +1,19 @@
-let users = [
-  {
-    id: 0,
-    name: 'Harry Eblov',
-  },
-  {
-    id: 1,
-    name: 'Marry Popkins',
-  },
-  {
-    id: 2,
-    name: 'Svinomatka',
-  },
-];
+// let users = [
+//   {
+//     id: 0,
+//     name: 'Harry Eblov',
+//   },
+//   {
+//     id: 1,
+//     name: 'Marry Popkins',
+//   },
+//   {
+//     id: 2,
+//     name: 'Svinomatka',
+//   },
+// ];
+
+let users = [];
 
 const getUsers = () => {
   return users;
@@ -44,10 +46,15 @@ const updateUser = (id, newName) => {
   return currentUser;
 };
 
+const clearUsers = () => {
+  users = [];
+};
+
 module.exports = {
   getUsers,
   getUser,
   createUser,
   deleteUser,
+  clearUsers,
   updateUser,
 };

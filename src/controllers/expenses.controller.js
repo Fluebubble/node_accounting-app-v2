@@ -22,7 +22,7 @@ const getExpenses = (req, res) => {
   //   return;
   // }
 
-  expensesService.getExpenses();
+  // expensesService.getExpenses();
 
   const filteredExpenses = expensesService.getExpenses(
     userId !== undefined ? Number(userId) : undefined,
@@ -128,26 +128,36 @@ const updateExpense = (req, res) => {
 const createExpense = (req, res) => {
   const { userId, spentAt, title, amount, category, note } = req.body;
 
-  if (!userId || !spentAt || !title || !amount || !category) {
-    res.sendStatus(400);
-  }
-
-  const fixedId = +userId;
-
-  if (isNaN(fixedId)) {
-    res.sendStatus(400);
+  if (
+    userId === undefined ||
+    spentAt === undefined ||
+    title === undefined ||
+    amount === undefined ||
+    category === undefined
+  ) {
+    // console.log(userId, spentAt, title, amount, category, note, 'wtf');
+    res.status(400).send('Some of props are not filled');
 
     return;
   }
 
-  if (!userService.getUser(fixedId)) {
+  // const fixedId = +userId;
+
+  // if (isNaN(fixedId)) {
+  //   res.sendStatus(400);
+
+  //   return;
+  // }
+
+  if (!userService.getUser(userId)) {
     res.status(400).send("User by this ID didn't found");
 
     return;
   }
 
   const newExpenseData = {
-    userId: fixedId,
+    // userId: fixedId,
+    userId,
     spentAt,
     title,
     amount,

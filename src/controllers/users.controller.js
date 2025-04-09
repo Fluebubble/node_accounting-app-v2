@@ -37,8 +37,10 @@ const getOne = (req, res) => {
 const add = (req, res) => {
   const { name } = req.body;
 
-  if (isNameCorrect(name)) {
+  if (!isNameCorrect(name)) {
     res.status(400).send({ error: 'Name is empty or has incorrect type' });
+
+    return;
   }
 
   const newUser = userService.createUser(name);

@@ -1,90 +1,104 @@
 /* eslint-disable function-paren-newline */
-let expenses = [
-  {
-    id: 0,
-    userId: 0,
-    spentAt: '2025-03-28T09:15:00Z',
-    title: 'Кава в кав’ярні',
-    amount: 120,
-    category: 'Кав’ярні',
-    note: 'Зустріч з другом, взяв латте',
-  },
-  {
-    id: 7,
-    userId: 1,
-    spentAt: '2025-03-29T14:40:00Z',
-    title: 'Квиток на автобус',
-    amount: 45,
-    category: 'Транспорт',
-    note: 'Їхав до центру міста',
-  },
-  {
-    id: 8,
-    userId: 2,
-    spentAt: '2025-03-29T14:40:00Z',
-    title: 'Квиток на автобус',
-    amount: 45,
-    category: 'Транспорт',
-    note: 'Їхав до центру міста',
-  },
-  {
-    id: 9,
-    userId: 0,
-    spentAt: '2025-03-29T14:40:00Z',
-    title: 'Квиток на автобус',
-    amount: 45,
-    category: 'Транспорт',
-    note: 'Їхав до центру міста',
-  },
-  {
-    id: 6,
-    userId: 1,
-    spentAt: '2023-03-30T17:05:00Z',
-    title: 'Овочі на базарі',
-    amount: 180,
-    category: 'Продукти',
-    note: 'Купив помідори, огірки, зелень',
-  },
-  {
-    id: 5,
-    userId: 0,
-    spentAt: '2025-05-30T17:05:00Z',
-    title: 'Сало з часником',
-    amount: 180,
-    category: 'Продукти',
-    note: 'Купив помідори, огірки, зелень',
-  },
-  {
-    id: 4,
-    userId: 0,
-    spentAt: '2025-03-30T17:05:00Z',
-    title: 'Ковбаса в Ганнусі',
-    amount: 180,
-    category: 'Продукти',
-    note: 'Купив помідори, огірки, зелень',
-  },
-  {
-    id: 3,
-    userId: 0,
-    spentAt: '2025-04-01T20:30:00Z',
-    title: 'Книга по Node.js',
-    amount: 520,
-    category: 'Навчання',
-    note: 'Замовив з Amazon для прокачки себе',
-  },
-];
+// let expenses = [
+//   {
+//     id: 0,
+//     userId: 0,
+//     spentAt: '2025-03-28T09:15:00Z',
+//     title: 'Кава в кав’ярні',
+//     amount: 120,
+//     category: 'Кав’ярні',
+//     note: 'Зустріч з другом, взяв латте',
+//   },
+//   {
+//     id: 12,
+//     userId: 0,
+//     spentAt: '2025-03-28T09:15:00Z',
+//     title: 'Кручі стелі',
+//     amount: 120,
+//     category: 'Дім',
+//     note: 'Залупа якась, хз чому',
+//   },
+//   {
+//     id: 18,
+//     userId: 0,
+//     spentAt: '2025-03-28T09:15:00Z',
+//     title: 'Чіз з колою та фрі',
+//     amount: 120,
+//     category: 'Макдак',
+//     note: 'Накурився і не витримав',
+//   },
+//   {
+//     id: 7,
+//     userId: 1,
+//     spentAt: '2025-03-29T14:40:00Z',
+//     title: 'Квиток на автобус',
+//     amount: 45,
+//     category: 'Транспорт',
+//     note: 'Їхав до центру міста',
+//   },
+//   {
+//     id: 8,
+//     userId: 2,
+//     spentAt: '2025-03-29T14:40:00Z',
+//     title: 'Квиток на автобус',
+//     amount: 45,
+//     category: 'Транспорт',
+//     note: 'Їхав до центру міста',
+//   },
+//   {
+//     id: 9,
+//     userId: 0,
+//     spentAt: '2025-03-29T14:40:00Z',
+//     title: 'Квиток на автобус',
+//     amount: 45,
+//     category: 'Транспорт',
+//     note: 'Їхав до центру міста',
+//   },
+//   {
+//     id: 6,
+//     userId: 1,
+//     spentAt: '2023-03-30T17:05:00Z',
+//     title: 'Овочі на базарі',
+//     amount: 180,
+//     category: 'Продукти',
+//     note: 'Купив помідори, огірки, зелень',
+//   },
+//   {
+//     id: 5,
+//     userId: 0,
+//     spentAt: '2025-05-30T17:05:00Z',
+//     title: 'Сало з часником',
+//     amount: 180,
+//     category: 'Продукти',
+//     note: 'Купив помідори, огірки, зелень',
+//   },
+//   {
+//     id: 4,
+//     userId: 0,
+//     spentAt: '2025-03-30T17:05:00Z',
+//     title: 'Ковбаса в Ганнусі',
+//     amount: 180,
+//     category: 'Продукти',
+//     note: 'Купив помідори, огірки, зелень',
+//   },
+//   {
+//     id: 3,
+//     userId: 0,
+//     spentAt: '2025-04-01T20:30:00Z',
+//     title: 'Книга по Node.js',
+//     amount: 520,
+//     category: 'Навчання',
+//     note: 'Замовив з Amazon для прокачки себе',
+//   },
+// ];
 
-// const filterBy = (expensesToFilter, filter, value) => {
-//   let filteredExpenses = [...expensesToFilter];
-
-//   filteredExpenses = filteredExpenses.filter(
-//     (expense) => expense[filter] === value,
-//   );
-
-//   return filteredExpenses;
-// };
+let expenses = [];
 
 const getExpenses = (userId, categories, from, to) => {
+  if (expenses.length === 0) {
+    return expenses;
+  }
+
   let filteredExpenses = [...expenses];
 
   if (userId || userId === 0) {
@@ -150,10 +164,15 @@ const createExpense = (newExpenseData) => {
   return newExpense;
 };
 
+const clearExpenses = () => {
+  expenses = [];
+};
+
 module.exports = {
   getExpenses,
   getExpense,
   deleteExpense,
   updateExpense,
   createExpense,
+  clearExpenses,
 };
